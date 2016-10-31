@@ -1,0 +1,276 @@
+/* Resset the css styling */
+html,body {
+	margin: 0;
+	padding: 0;
+}
+p {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+}
+h1,h2,h3,h4,h5 {
+	font-size: 100%;
+	font-weight: normal;
+}
+table {
+	border-collapse: collapse;
+	border-spacing:0;
+}
+ul,ol {
+	list-style: none;
+}
+input,textarea {
+	margin: 0px;
+	width:100%;
+	height:100%;
+	box-sizing: border-box;
+}
+fieldset,img {
+	border:0;
+}
+q:before,q:after {
+	content:'';
+}
+/* Main css begins here */
+.main-container {
+	width: 100%;
+	height: 100%;
+	font-family: Arial;
+	font-weight: 100;
+	-webkit-font-smoothing: antialiased;
+}
+.main-container .dialog-container {
+	display: block;
+	position: relative;
+	margin: 130px auto;
+	padding: 20px;
+	box-sizing: border-box;
+	width: 40%;
+	height: auto;
+	background-color: #F8F8F8;
+	border: 1px solid #EEEEEE;
+	box-shadow: 0 0 20px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0 0 20px rgba(0,0,0,0.3);
+	-webkit-box-shadow: 0 0 20px rgba(0,0,0,0.3);
+	-o-box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+@media (max-width: 600px) {
+	.main-container .dialog-container {
+		width: 100%;
+	}
+}
+.dialog-container .dialog-title {
+	font-size: 24px;
+	color: #29A1E6;
+	margin: 10px 0px;
+	margin-bottom: 30px;
+}
+.dialog-container .dialog-welcome-email {
+	width: 100%;
+	display: inline-block;
+	margin: 10px 0px;
+	position: relative;
+}
+.dialog-container .alert-error {
+	display: none;
+	padding: 12px 20px;
+	border: 1px solid transparent;
+	background-color: #f2dede;
+    border-color: #ebcccc;
+    color: #a94442;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+.dialog-container .alert-error.active {
+	display: block;
+}
+.dialog-container .close {
+	position: absolute;
+	right: 14px;
+	top: 12px;
+	width: 24px;
+	height: 17px;
+	opacity: 0.3;
+	cursor: pointer;
+}
+.dialog-container .close:before, .dialog-container .close:after {
+	position: absolute;
+	left: 15px;
+	content: ' ';
+	height: 18px;
+	width: 3px;
+	background-color: #333;
+}
+.dialog-container .close:before {
+	transform: rotate(45deg);
+}
+.dialog-container .close:after {
+	transform: rotate(-45deg);
+}
+.dialog-container .dialog-welcome-email #welcome-email {
+	visibility: hidden;
+	float: left;
+}
+.dialog-welcome-email label {
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 15px;
+	height: 15px;
+	background-color: #29A1E6;
+	border: 1px solid #eee;
+	border-radius: 2px;
+}
+.dialog-welcome-email label:after {
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 7px;
+	height: 3px;
+	background: transparent;
+	top: 4px;
+	left: 3px;
+	border: 2px solid #fff;
+	border-top: none;
+	border-right: none;
+	transform: rotate(-45deg);
+}
+.dialog-welcome-email input[type="checkbox"]#welcome-email:checked + label:after {
+	opacity: 1;
+}
+.dialog-welcome-email .checkbox-text {
+	margin-left: 25px;
+}
+.dialog-container .dialog-dropdown-container {
+	margin: 20px 0px;
+}
+.dialog-dropdown-container .dialog-dropdown {
+	position: relative;
+	background-color: #DDDDDD;
+	cursor: text;
+	color: #000;
+	margin-top: 10px;
+	border-radius: 2px;
+	min-height: 32px;
+	padding: 4px 30px 4px 5px;
+	line-height: 1.42857143;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out;
+}
+.dialog-dropdown-container .dialog-dropdown.focussed {
+	border: 1px solid #66afe9;
+	outline: 0;
+	background-color: #fff;
+}
+.dialog-dropdown-container .dialog-dropdown .dropdown-caret {
+	position: absolute;
+	cursor: pointer;
+	right:45px;
+	top: 18px;
+	z-index: 2;
+}
+.dialog-dropdown-container .dialog-dropdown .dropdown-caret:before {
+	content: '';
+	position: absolute;
+	top: 25%;
+	left: 12px;
+	border-top: 8px solid #999;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+}
+.dialog-dropdown-container .dialog-dropdown .dropdown-caret:after {
+	content: '';
+	position: absolute;
+	top: 25%;
+	left: 16px;
+	border-top: 4px solid #DDDDDD;
+	border-left: 4px solid transparent;
+	border-right: 4px solid transparent;
+}
+.dialog-dropdown-container .dialog-dropdown .dropdown-caret.focussed:after {
+	border-top: 4px solid #fff;
+}
+.dialog-dropdown-container .dialog-dropdown .search {
+	position: absolute;
+	font-size: 16px;
+	font-family: Arial;
+	padding: inherit;
+	background: none;
+	border: none;
+	box-shadow: none;
+	cursor: text;
+	top: 0;
+	left: 10px;
+	width: 100%;
+	outline: 0;
+	-webkit-tap-highlight-color: rgba(255,255,255,0);
+	z-index: 1;
+}
+.dialog-dropdown-container .dialog-dropdown .menu {
+	display: none;
+	position: absolute;
+	left:0;
+	top:100%;
+	padding: 0;
+	width: 100%;
+	margin: 1px -1px;
+	background-color: #fff;
+	border: 1px solid #EEEEEE;
+	overflow-x: hidden;
+	overflow-y: auto;
+	z-index: 3;
+}
+.dialog-dropdown-container .dialog-dropdown .menu.active {
+	display: block;
+}
+.dialog-dropdown .menu .item {
+	position: relative;
+	color: #000;
+	padding: 11px 16px;
+	cursor: pointer;
+	text-align: left;
+}
+.dialog-dropdown .default.text {
+	position: absolute;
+	top: 10px;
+	left: 16px;
+}
+.dialog-dropdown .default.text.focussed {
+	visibility: hidden;
+}
+.dialog-dropdown-container > label {
+	font-size: 14px;
+	color: #000;
+	font-weight: bold;
+}
+.dialog-container .bottom-container {
+	text-align: right;
+}
+.dialog-container .bottom-container .btn {
+	padding: 12px 30px;
+	text-align: center;
+	border: none;
+	font-size: 14px;
+	margin-left: 10px;
+	width: 100px;
+	cursor: pointer;
+}
+.dialog-container .bottom-container .btn:focus, .dialog-container .bottom-container .btn:active  {
+	outline: none;
+}
+.dialog-container .bottom-container .btn.cancel-btn {
+	background-color: #DEDEDE;
+	color: #000;
+}
+.dialog-container .bottom-container .btn.ok-btn {
+	background-color: #29A1E6;
+	color: #fff;
+}
+
