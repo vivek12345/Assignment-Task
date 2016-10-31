@@ -259,15 +259,16 @@ q:before,q:after {
 	border: none;
 	font-size: 14px;
 	margin-left: 10px;
-	width: 100px;
+	width: 105px;
 	cursor: pointer;
+	font-weight: bold;
 }
 .dialog-container .bottom-container .btn:focus, .dialog-container .bottom-container .btn:active  {
 	outline: none;
 }
 .dialog-container .bottom-container .btn.cancel-btn {
 	background-color: #DEDEDE;
-	color: #000;
+	color: #585656;
 }
 .dialog-container .bottom-container .btn.ok-btn {
 	background-color: #29A1E6;

@@ -2,7 +2,20 @@ import React,{ Component } from 'react';
 import SearchDropdown from './searchDropdown';
 import classNames from 'classNames';
 
+/*State of this component is as follows:-
+	---------------------
+	|	data  			|
+	|	selectedTeam	|
+	|	isChecked		|
+	|	error 			|
+	---------------------
+*/
+
 export default class DialogBox extends Component {
+	/**
+	 * [constructor description] Called first time on object instantiation and initializes the states object
+	 * @param  {[Object]} props [Input is props passed from its parent component]
+	 */
 	constructor(props) {
 		super(props);
 		const data = [{
@@ -18,6 +31,7 @@ export default class DialogBox extends Component {
 				team: 'Sales',
 				employees: ['Ankit Jain', 'Anjali Maulingkar']
 		}];
+		/*Process the data to make teams as the key and employees as the value */
 		const processedData = this.processData(data);
 		this.state = {
 			data: processedData,
@@ -27,6 +41,11 @@ export default class DialogBox extends Component {
 		}
 	}
 
+	/**
+	 * [processData description] This function processes the data and makes the team's as keys and employees as values of the object
+	 * @param  {[Array]} data [Array of objects containing team name and employees]
+	 * @return {[Object]}      [An object with team name as keys and employees as values]
+	 */
 	processData(data) {
 		const processedData = {};
 		data.forEach((item) => {
@@ -41,6 +60,11 @@ export default class DialogBox extends Component {
 		});
 	}
 
+	/**
+	 * [handleSubmitButton description] Event handler on click of ok button, processes input values and shows an error message
+	 * if employee choosen is invalid
+	 * @param  {[Object]} event [event object paased on click of ok button]
+	 */
 	handleSubmitButton(event) {
 		event.preventDefault();
 		event.stopPropagation();
@@ -67,6 +91,11 @@ export default class DialogBox extends Component {
 		}
 	}
 
+	/**
+	 * [handleCancelButton description] Event handler for cancel button and cross icon, if input field has data, it shows confirmation box
+	 * and if user selects yes, it will remove the dialog container form dom
+	 * @param  {[Object]} event [event object paased on click of cancel button]
+	 */
 	handleCancelButton(event) {
 		const teamValue = document.getElementById('team').value;
 		const employeeValue = document.getElementById('employee').value;
@@ -79,12 +108,20 @@ export default class DialogBox extends Component {
 		}
 	}
 
+	/**
+	 * [toggleCheckBox description] Toggles the checkbox state
+	 * @param  {[Object]} event [Event object fired by checkbox]
+	 */
 	toggleCheckBox(event) {
 		this.setState({
 			isChecked: event.target.checked
 		});
 	}
 
+	/**
+	 * [render description] React render function,this gets called when ever state changes
+	 * It render a common component created for the search box of team and employee to make the code DRY
+	 */
 	render() {
 		let teamData = Object.keys(this.state.data);
 		let employees = this.state.data[this.state.selectedTeam] || [];
